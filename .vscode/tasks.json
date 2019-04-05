@@ -1,0 +1,19 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "build and run",
+         "type": "shell",
+         "command": "g++ -g Main.cpp box.cpp -o Main; ./Main",
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
+      },
+      {
+         "label": "build",
+         "type": "shell",
+         "command": "g++ -g Main.cpp box.cpp -o Main",
+      }
+   ]
+}

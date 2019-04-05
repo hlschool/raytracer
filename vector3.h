@@ -72,6 +72,30 @@ class Vector3 {
     bool operator<=(const Vector3 &op2) const {
       return (d[0] <= op2.d[0] && d[1] <= op2.d[1] && d[2] <= op2.d[2]);
     }
+    void rotate_x(float angle) {
+		float temp_x = d[0];
+		float temp_y = (d[1] * cos(angle)) - (d[2] * sin(angle));
+		float temp_z = (d[1] * sin(angle)) + (d[2] * cos(angle));
+		d[0] = temp_x;
+		d[1] = temp_y;
+		d[2] = temp_z;
+	}
+	void rotate_y(float angle) {
+		float temp_x = (d[0] * cos(angle)) + (d[2] * sin(angle));
+		float temp_y = d[1];
+		float temp_z = -(d[0] * sin(angle)) + (d[2] * cos(angle));
+		d[0] = temp_x;
+		d[1] = temp_y;
+		d[2] = temp_z;
+	}
+	void rotate_z(float angle) {
+		float temp_x = (d[0] * cos(angle)) - (d[1] * sin(angle));
+		float temp_y = (d[0] * sin(angle)) + (d[1] * cos(angle));
+		float temp_z = d[2];
+		d[0] = temp_x;
+		d[1] = temp_y;
+		d[2] = temp_z;
+	}
   
   private:
     float d[3];
